@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Prociono
+font link: https://fonts.google.com/specimen/Prociono
+font author: Barry Schwartz
+font author site: http://crudfactory.com/
+
+
+icon designer: Ealancheliyan s
+icon designer link: /Ealancheliyan
+        
+{"bg":"#644A44","font":"#ffffff","icon":"#C28328","slogan":"#ffffff"}
+      
