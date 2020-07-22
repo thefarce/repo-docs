@@ -1,24 +1,25 @@
-import React     from 'react';
+import React          from 'react';
 import FunctionDoclet from './doclet/FunctionDoclet';
-import PackageDoclet from './doclet/PackageDoclet';
+import PackageDoclet  from './doclet/PackageDoclet';
+import util           from '../../util';
 import './style.scss';
 
 function Doclet ({data}) {
   //let raw = (<pre style={{textAlign: 'left'}}>{JSON.stringify(data, undefined, 2)}</pre>);
+  let content = '';
 
   if (data.kind === 'member' || data.memberof) {
-    return '';
   }
 
   if (data.kind === 'package') {
-    return (<PackageDoclet data={data} />);
+    content = (<PackageDoclet data={data} />);
   }
 
   if (data.kind === 'function') {
-    return (<FunctionDoclet data={data} />);
+    content = (<FunctionDoclet data={data} />);
   }
 
-  return '';
+  return (<div id={util.normalizeName(data.kind, data.name)}>{content}</div>);
 }
 
 export default Doclet;

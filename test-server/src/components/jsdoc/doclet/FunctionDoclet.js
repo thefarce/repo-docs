@@ -3,6 +3,7 @@ import DocletName      from '../components/DocletName';
 import FunctionParams  from './function/FunctionParams';
 import FunctionReturns from './function/FunctionReturns';
 import DocletDesc      from '../components/DocletDesc';
+import util            from '../../../util';
 import './FunctionDoclet.scss';
 
 function FunctionDoclet ({data}) {

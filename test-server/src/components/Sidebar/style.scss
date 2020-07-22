@@ -29,6 +29,11 @@
     }
   }
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   .functions { &:before { content: 'Functions'   ; } }
   .constants { &:before { content: 'Constants'   ; } }
   .members   { &:before { content: 'Members'     ; } }
@@ -37,7 +42,7 @@
 
   .doclet-link {
     cursor: pointer;
-    padding: 0.5em 1em;
+    padding: 0.3em 1em;
     font-weight: 100;
 
     &:hover {

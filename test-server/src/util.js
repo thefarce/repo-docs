@@ -16,6 +16,12 @@ function formatParagraphs (string) {
   );
 }
 
+function normalizeName (kind, name) {
+  let token = `${kind}__${name}`;
+  return token.replace(/[\W]+/g,'-');
+}
+
 export default {
-  formatParagraphs
+  formatParagraphs,
+  normalizeName,
 };
