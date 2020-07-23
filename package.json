@@ -1,5 +1,5 @@
 {
-  "name": "test-server",
+  "name": "@thefarce/repo-docs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +14,10 @@
     "striptags": "^3.1.1"
   },
   "scripts": {
+    "docs:build": "npm run docs:build:jsdoc && npm run docs:build:site",
+    "docs:build:jsdoc": "npx jsdoc --package ./package.json --configure ./config/jsdoc.config.json --readme README.md --template ./node_modules/@thefarce/jsdoc-to-json/template --destination ./pub/src ./src",
+    "docs:build:site": "npm run --prefix ./pub build",
+    "docs:deploy": "npm run docs:build && gh-pages -d pub/build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,5 +37,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/react@1.0.20"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  },
+  "devDependencies": {
+    "@thefarce/jsdoc-to-json": "^0.1.0",
+    "gh-pages": "^3.1.0"
   }
 }

@@ -1,5 +1,4 @@
 import React     from 'react';
-import './Package.scss';
 
 function PackageDependency (token, version) {
   return (

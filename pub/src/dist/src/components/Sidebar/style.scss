@@ -1,0 +1,52 @@
+#sidebar {
+  :before {
+    font-weight: 400;
+  }
+
+  .docstypes {
+    margin-bottom: 1em;
+    border-bottom: 2px solid #C28328;
+
+    .docstype {
+      display     : inline-block;
+      padding     : 0.5em 1em;
+      margin      : 0 0.5em;
+      font-weight : 300;
+      cursor      : pointer;
+
+      &.user-docs {
+        background-color: #C28328; 
+        color       : white;
+      }
+
+      &.devs-docs {
+
+      }
+
+      &:hover {
+        background-color: red;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .functions { &:before { content: 'Functions'   ; } }
+  .constants { &:before { content: 'Constants'   ; } }
+  .members   { &:before { content: 'Members'     ; } }
+  .others    { &:before { content: 'Other Items' ; } }
+  .packages  { &:before { content: 'Packages'    ; } }
+
+  .doclet-link {
+    cursor: pointer;
+    padding: 0.3em 1em;
+    font-weight: 100;
+
+    &:hover {
+      background-color : orange;
+    }
+  }
+}

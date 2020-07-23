@@ -1,5 +1,4 @@
 import React             from 'react';
-import doclets           from './jsdoc-data.json';
 import Doclet            from './components/jsdoc/Doclet';
 import logo              from './assets/thefarce-net-code.png';
 import Sidebar           from './components/Sidebar';
@@ -8,7 +7,7 @@ import categorizeDoclets from './categorize-doclets';
 
 import './App.scss';
 
-function App () {
+function App ({doclets}) {
   doclets.sort((a,b) => {
     return (a.kind === 'package' && b.kind !== 'package') ? -1
       :    (a.kind !== 'package' && b.kind === 'package') ?  1
@@ -34,7 +33,7 @@ function App () {
         <PageContent>{doclet_list}</PageContent>
 			</div>
 
-      <pre style={{'text-align': 'left'}}>{JSON.stringify(doclets, undefined, 2)}</pre>
+      <pre style={{textAlign: 'left'}}>{JSON.stringify(doclets, undefined, 2)}</pre>
     </div>
   );
 }

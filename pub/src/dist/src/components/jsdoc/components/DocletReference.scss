@@ -1,0 +1,121 @@
+.doclet {
+  text-align: left;
+  padding: 10px;
+
+  .line-numbers {
+    font-style: italic;
+  }
+
+  .identifier {
+    .kind {
+      font-weight  : 100;
+      font-size    : 0.75em;
+      margin-right : 10px;
+    }
+
+    .name {
+      font-weight: normal;
+      .token {
+        font-weight: 900;
+      }
+      .param {
+        font-weight : 100;
+        margin      : 0px 5px;
+        font-size   : 0.75em;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .reference {
+      font-size   : 0.9rem;
+      font-weight : 100;
+      font-style  : italic;
+      color       : #555555;
+
+      .filename,
+      .start-line {
+        font-weight : 500;
+        margin      : 0 5px;
+      }
+    }
+  }
+
+  &.package {
+    .dependency-list {
+      &:before {
+        content     : "Dependencies";
+        font-weight : 100;
+        color       : #888888;
+      }
+
+      .dependency {
+        margin          : 5px 10px;
+        display         : block;
+        text-decoration : none;
+        color           : black;
+        border-left: 5px;
+
+        &:hover {
+          color: rgba(255,128,64,1);
+          border-color: rgba(255, 128,64,1);
+        }
+
+        .token {
+        }
+
+        .version {
+          &:before { content: "(" }
+          &:after { content: ")" }
+          font-weight: 100;
+          margin-left: 10px;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+
+  &.function {
+    .param-list {
+      &:before {
+        content     : "Parameters";
+        font-weight : 100;
+        color       : #888888;
+      }
+    }
+
+    .return-list {
+      &:before {
+        content     : "Returns";
+        font-weight : 100;
+        color       : #888888;
+      }
+    }
+
+    .param-list,
+    .return-list {
+
+      .return,
+      .param {
+        margin: 1em 0.8em;
+
+        .name {
+          display     : inline-block;
+          font-weight : bold;
+          margin-right: 1em;
+        }
+
+        .types {
+          color      : red;
+          font-style : italic;
+        }
+
+        .description {
+          display : block;
+        }
+      }
+    }
+  }
+}
