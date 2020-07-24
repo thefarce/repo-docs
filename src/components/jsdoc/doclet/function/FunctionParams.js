@@ -6,6 +6,13 @@ function FunctionParams ({params=[]}) {
   let list  = [];
 
   params.forEach(param => {
+    if (!param.type) {
+      param.type = {};
+    }
+    if (!param.type.names) {
+      param.type.names = [];
+    }
+
     list.push(
       <div className="param">
         <span className="name">{param.name}</span>

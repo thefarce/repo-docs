@@ -12,7 +12,7 @@ function Package ({data}) {
     <div className='doclet package' id={util.normalizeName(data.kind,data.name)}>
       <DocletName data={data} />
       <DocletDesc desc={data.description}/>
-      <PackageDependencies deps={data.dependencies} />
+      <PackageDependencies deps={data.dependencies || []} />
     </div>
   );
 }
